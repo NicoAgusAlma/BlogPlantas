@@ -108,19 +108,19 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 # def contacto(request):
 #     return render(request, 'BlogPlantas/contacto.html')
 
-def plantas(request):
-    return render(request, 'BlogPlantas/plantas.html')
+# def plantas(request):
+#     return render(request, 'BlogPlantas/plantas.html')
 
-def viveros(request):
-    return render(request, 'BlogPlantas/viveros.html')
+# def viveros(request):
+#     return render(request, 'BlogPlantas/viveros.html')
 
-def ui(request):
-    return render(request, 'BlogPlantas/ui.html')
+# def ui(request):
+#     return render(request, 'BlogPlantas/ui.html')
 
-def viveros_todos(request):
-    viveros = Vivero.objects.all()
-    contexto={'viveros':viveros}
-    return render(request, 'BlogPlantas/viveros_todos.html', contexto)
+# def viveros_todos(request):
+#     viveros = Vivero.objects.all()
+#     contexto={'viveros':viveros}
+#     return render(request, 'BlogPlantas/viveros_todos.html', contexto)
 
 # def buscador(request):
 #     return render(request, 'BlogPlantas/resultado_busqueda.html',{'search_param':''})
