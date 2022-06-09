@@ -1,0 +1,38 @@
+{% extends 'BlogPlantas/base.html' %}
+{% load static %}
+{% block contenidoQueCambia %}
+
+    <main id="main" class="site-main">
+        
+
+        <section class="site-section section-features section-ui-elements">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-5">
+                        <h2>Datos del posteo:</h2>
+                        
+                        <br>
+                        <form method="post" enctype="multipart/form-data">{%csrf_token%}
+                            <h4>Titulo: {{ form.titulo }}</h4><br>
+                            <h4>Subitulo: {{ form.subtitulo }}</h4><br>
+                            <h4>Fecha: {{ form.fecha }}</h4><br>
+                            <h4>Texto: {{ form.texto }}</h4><br>
+                            <h4>Autor: {{ form.autor }}</h4><br>
+                            <h4>Imagen: {{ form.imagen }}</h4><br>
+                            
+                            <input type="submit" value="Enviar"/>                             
+                        </form>
+                        <a href="{% url 'blog:ListaPosteos' %}">Volver</a>
+                    </div>
+                    <div class="col-sm-7 hidden-xs">
+                        <img src="{% static 'BlogPlantas/assets/img/portfolio-1.jpg' %}" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+     
+
+    </main><!-- /#main -->
+
+    {% endblock %}
