@@ -10,7 +10,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth import login, logout, authenticate
 from requests import request
 from django.db.models import Q
-from BlogPlantas.forms import PosteoFormulario, UserRegisterForm
+#  from BlogPlantas.forms import PosteoFormulario, UserRegisterForm
 from django.urls import reverse_lazy
 from blog.models import Posteo
 from plantas.models import Planta, ImagenPlanta
