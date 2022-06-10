@@ -24,6 +24,14 @@ class UserRegisterForm(UserCreationForm):
         fields = ['username','first_name','last_name','email','password1','password2']
         help_texts = {k:'' for k in fields}
 
+class AvatarUser(forms.ModelForm):
+    class Meta:
+        model=Avatar
+        fields = ('user','imagen')
+        widgets = {
+            'user': forms.TextInput(attrs={'palceholder':'user name', 'id':'usuarioImagen', 'type':'hidden'}),
+        }
+
 # class UserEditForm(UserCreationForm):
 #     email=forms.EmailField(label='Modificar eMail')
 #     password1 = forms.CharField(label='Contraseña', widget=forms.PasswordInput)

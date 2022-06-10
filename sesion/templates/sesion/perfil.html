@@ -27,6 +27,11 @@
                         <br>
                         <br>
                         <div style="text-decoration-line: underline;" class="subpage-hero">
+                            {% if user.avatar.id %}
+                            <h3><a class="btn btn-border" href="{% url 'sesion:UpdateAvatar' user.avatar.id %}" >Cambiar avatar</a></h3> 
+                            {% else %}
+                            <h3><a class="btn btn-border" href="{% url 'sesion:Avatar' %}" >Subir avatar</a></h3> 
+                            {% endif %}
                             <h3><a class="btn btn-border" href="{% url 'sesion:EditarPerfil' %}" >Editar informacion</a></h3> 
                             <h3><a class="btn btn-border" href="{% url 'home:Inicio' %}" >Home</a></h3> 
                             <h3><a class="btn btn-border" onclick="history.back()">Volver</a></h3> 

@@ -1,15 +1,17 @@
 from re import A
-import re
+from django.urls import reverse_lazy
 from django.shortcuts import redirect, render
 from django.forms.models import model_to_dict
 from requests import request
-from sesion.forms import UserRegisterForm
+from sesion.forms import AvatarUser, UserRegisterForm
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from sesion.forms import UserEditForm
 from sesion.models import Avatar
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView
+from django.views.generic.detail import DetailView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.models import User
 from django.db.models import Q
 
@@ -79,6 +81,19 @@ def editar_perfil(request):
 class Perfil(ListView):
     model = User
     template_name = 'sesion/perfil.html'
+
+class CreateAvatarView(CreateView):
+    model=Avatar
+    form_class=AvatarUser
+    template_name = 'sesion/avatar.html'
+    success_url = reverse_lazy('sesion:Perfil')
+
+class UpdateAvatarView(UpdateView):
+    model=Avatar
+    form_class=AvatarUser
+    success_url = reverse_lazy('sesion:Perfil')
+    def get_template_names(self):         
+        return 'sesion/avatar.html'
 
    
 # def Perfil(request):
