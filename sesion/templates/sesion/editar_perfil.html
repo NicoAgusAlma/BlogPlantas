@@ -8,16 +8,17 @@
         <section class="site-section section-portfolio">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="heading-separator2">Sección de viveros</h2>
-                    <p class="subheading-text">Nuestras secciones más importantes</p>
+                    <h2 class="heading-separator2">Edicion de usuario</h2>
+                   
+                        <form class="text-center" action="" method="POST">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <input type="submit" class="btn btn-border" value="Guardar" style="margin-top: 30px;"/>
+                        </form>
+                        <h3><a class="btn btn-border" onclick="history.back()">Volver</a></h3>  
+                    
                 </div>
-                
-               <table>
-
-                {{miFormulario.as_table}}
-
-               </table>
-
+            </div>
         </section><!-- /.section-portfolio -->
 
 

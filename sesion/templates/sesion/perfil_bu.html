@@ -1,0 +1,48 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block contenidoQueCambia %}
+
+    <main id="main" class="site-main">
+        
+
+        <section class="site-section section-features">
+            <div class="container">
+                <div class="row">
+                    <div style="margin-top: 50px;" class="col-sm-5">
+                        <h2>Usuario: {{user.username}}</h2>
+                        
+                        <br>             
+                        <h4>Nombre: {{user.first_name}}</h4>
+                        <h4>Apellido: {{user.last_name}}</h4>
+                        <h4>Email: {{user.email}}</h4>
+                        {% if user.is_superuser %}
+                        <h4>Es SuperUser: Si</h4>
+                        {% else %}
+                        <h4>Es SuperUser: No</h4>
+                        {% endif %}
+                        <img src="{{user.avatar.imagen.url}}" > 
+                        <br>
+                        <br>
+                        <div style="text-decoration-line: underline;" class="subpage-hero">
+                        <h3><a class="btn btn-border" href="{% url 'sesion:EditarPerfil' %}" >Editar informacion</a></h3> 
+                        <h3><a class="btn btn-border" href="{% url 'home:Inicio' %}" >Home</a></h3> 
+                        <h3><a class="btn btn-border" onclick="history.back()">Volver</a></h3>  
+                        </div>
+                    </div>
+                    <div class="col-sm-6 hidden-xs">
+                        
+                        <img src="{{user.profile.image.url}}" > 
+                        
+                    </div>
+                </div>
+            </div>
+
+
+
+        </section>
+
+ 
+
+    </main><!-- /#main -->
+
+    {% endblock %}

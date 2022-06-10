@@ -129,7 +129,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / "home2/static/"
+    BASE_DIR / "home/static/"
 
 ]
 

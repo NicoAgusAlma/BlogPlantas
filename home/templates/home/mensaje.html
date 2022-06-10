@@ -1,0 +1,29 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block contenidoQueCambia %}
+
+    <main id="main" class="site-main">
+        
+
+        <section class="site-section section-portfolio">
+            <div class="container">
+                <div class="text-center">
+                    <h2 style="margin-top: 50px;" class="heading-separator2">{{mensaje_titulo}}</h2>
+                    
+                    <h3>
+                        {{mensaje}}
+                        <br>
+                        <br>
+                    </h3>
+
+                    <h2><a href="{% url 'home:Inicio' %} " class="btn btn-border" style="margin-top: 100px;">Home</a></h2> 
+                    
+
+            </div>
+
+        </section><!-- /.section-portfolio -->
+
+
+    </main><!-- /#main -->
+
+    {% endblock %}

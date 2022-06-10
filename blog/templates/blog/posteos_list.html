@@ -46,9 +46,11 @@
                         </article><!-- /.blog-post -->
                         {% endfor %}
                         {% if user.is_authenticated %}
+                        {% if user.is_superuser %}
                             <div style="text-decoration-line: underline;">
                                 <h3><a href="{% url 'blog:AgregarPosteo' %}" >Nuevo post</a></h3>                         
                             </div>
+                        {% endif %}
                         {% endif %}
                     </div>
                     <aside class="col-md-4">
@@ -69,6 +71,7 @@
                                     <li><a href="/blog/posteo/{{posteo.id}}/detail">{{posteo.titulo}}</a></li>
                                     {% endif %}
                                     {% endfor %}
+                                    
                                     
                                     
                                 </ul>
