@@ -13,12 +13,8 @@
                         
                         <br>
                         <form method="post" enctype="multipart/form-data">{%csrf_token%}
-                            <h4>Titulo: {{ form.titulo }}</h4><br>
-                            <h4>Subitulo: {{ form.subtitulo }}</h4><br>
-                            <h4>Fecha: {{ form.fecha }}</h4><br>
-                            <h4>Texto: {{ form.texto }}</h4><br>  
-                            <h4>Autor: {{ form.autor }}</h4><br>                           
-                            <h4>Imagen: {{ form.imagen }}</h4><br>                                                       
+                            
+                            {{form.as_p}}                                                       
                             <input type="submit" value="Enviar"/>                                                      
                         </form>
                         <a href="{% url 'blog:ListaPosteos' %}">Volver</a>
@@ -26,6 +22,10 @@
                     <div class="col-sm-7 hidden-xs">
                         <img src="{% static 'home/assets/img/portfolio-1.jpg' %}" alt="">
                     </div>
+                    <script>
+                        var name = "{{ user.id }}";
+                        document.getElementById('usuarioImagen').value = name;
+                    </script>
                 </div>
             </div>
         </section>
