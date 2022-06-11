@@ -19,8 +19,11 @@
                         <br>
                         
                         <div style="clear: both">
-                            <h4 style="text-decoration-line: underline; float: left" >Viveros donde entontrarla:  </h4>
-                            <h4 style="float: left; margin-left: 5px;" >{{producto.puntoDeVenta.nombre}}</h4>
+                            <h4 style="text-decoration-line: underline; float: left" >Viveros donde entontrarla:</h4>
+                            <h4 style="float: left; margin-left: 5px;" >
+                                {% for vivero in producto.puntoDeVenta.all %}
+                                {{vivero}}   <br>
+                                {% endfor %}</h4>
                         </div> 
                         <br>                        
                         

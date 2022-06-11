@@ -8,7 +8,7 @@ class PlantaCustom(forms.ModelForm):
         widgets = {
             'nombreComun': forms.TextInput(attrs={'palceholder':'Nombre comun'}),
             'interior': forms.CheckboxInput(attrs={'style':'margin-left:10px'}),
-            'luzDirecta': forms.CheckboxInput(attrs={'style':'margin-left:10px'})            
+            'luzDirecta': forms.CheckboxInput(attrs={'style':'margin-left:10px'})                    
         }
 
 
