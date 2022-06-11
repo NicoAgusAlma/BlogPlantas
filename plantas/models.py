@@ -1,6 +1,7 @@
 from email.mime import image
 from os import urandom
 from django.db import models
+from viveros.models import Vivero
 
 # Create your models here.
 
@@ -11,7 +12,7 @@ class Planta(models.Model):
     familia=models.CharField(help_text='Arbol, planta, flor, cactacea, etc.', max_length=50)
     sustrato=models.CharField(help_text='Algun tipo de tierra especial?', max_length=50)
     precio=models.IntegerField(help_text='Precio en U$s blue.')
-    viveros=models.CharField(help_text='Viveros donde encontrarla.', max_length=100)
+    viveros=models.ForeignKey(Vivero, on_delete=models.CASCADE)
     peligrosComunes=models.CharField(help_text='Problemas más usuales.', max_length=100)
     interior=models.BooleanField('interior', default=True)
     luzDirecta=models.BooleanField(default=False, help_text='Necesita luz solar directa?.')

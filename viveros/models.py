@@ -12,8 +12,7 @@ class Vivero(models.Model):
     calle=models.CharField(max_length=40)
     altura=models.CharField(max_length=40)
     telefono=models.IntegerField()
-    stockPlantas=models.CharField(max_length=2000)
-    stockProductos=models.CharField(max_length=2000)
+  
 
     def __str__(self):
         return f'{self.nombre} en {self.localidad}'
