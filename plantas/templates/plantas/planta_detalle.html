@@ -5,7 +5,7 @@
     <main id="main" class="site-main">
         
 
-        <section class="site-section section-features">
+        <section class="site-section section-features" style="padding-bottom: 0px;">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-5">
@@ -34,9 +34,9 @@
                         <h4>{{planta.descripcion}}</h4>
                         <br>
                         <br>
-                        <div style="text-decoration-line: underline;" class="subpage-hero">
-                        <h3><a class="btn btn-border" href="{% url 'plantas:ListaPlantas' %}" >Listado de plantas</a></h3> 
-                        <h3><a class="btn btn-border" onclick="history.back()">Volver</a></h3>  
+                        <div  class="subpage-hero">
+                        <h3><a class="btn btn-border" href="{% url 'plantas:ListaPlantas' %}" >Listado de plantas</a> 
+                        <a class="btn btn-border" onclick="history.back()">Volver</a></h3>  
                         </div>
                     </div>
                     <div class="col-sm-6 hidden-xs">

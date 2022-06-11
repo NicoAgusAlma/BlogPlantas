@@ -5,7 +5,7 @@
     <main id="main" class="site-main">
         
 
-        <section class="site-section section-features">
+        <section class="site-section section-features" style="padding-bottom: 0px;">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-5">
@@ -13,20 +13,20 @@
                         
                         <br>
                         
-                        <p><h3>{{vivero.nombre}}</h3></p>
-                        <p><h3>{{vivero.provincia}}, {{vivero.localidad}}</h3></p>
-                        <p><h3>{{vivero.calle}} {{vivero.altura}}</h3></p>
-                        <p><h3>Telefono: {{vivero.telefono}}</h3></p>
-                        <br>
-                        <div style="text-decoration-line: underline;" class="subpage-hero">
-                        <h3><a class="btn btn-border" href="{% url 'viveros:ListaViveros' %}" >Listado de viveros</a></h3> 
-                        <h3><a class="btn btn-border" onclick="history.back()">Volver</a></h3>  
+                        <p><h3>{{vivero.nombre}}<br><br>
+                        {{vivero.provincia}}, {{vivero.localidad}}<br><br>
+                        {{vivero.calle}} {{vivero.altura}}<br><br>
+                        Telefono: {{vivero.telefono}}</h3></p><br>
+                       
+                        <div class="subpage-hero">
+                            <h3><a class="btn btn-border" href="{% url 'viveros:ListaViveros' %}" >Listado de viveros</a> 
+                            <a class="btn btn-border" onclick="history.back()">Volver</a></h3>  
                         </div> 
                                        
                                         
                     </div>
                     <div class="col-sm-6 hidden-xs">
-                        {% if '.' in vivero.imagen.url %}
+                        {% if vivero.imagen %}
                         <img src="{{vivero.imagen.url}}" style="margin-top: 100px;" > 
                         {% endif %}
                     </div>

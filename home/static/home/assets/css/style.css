@@ -881,10 +881,18 @@ html, body {
 }
 
 .subpage-hero {
+    height: 200px;
+}
+
+.subpage-hero2 {
     height: 400px;
 }
 
 .subpage-hero.overlay:before {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.subpage-hero2.overlay:before {
     background-color: rgba(255, 255, 255, 0.1);
 }
 

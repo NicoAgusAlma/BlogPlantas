@@ -2,7 +2,7 @@
 {% load static %}
 {% block contenidoQueCambia %}
 
-    <div id="hero" class="hero overlay subpage-hero blog-hero site-header-white">
+    <div id="hero" class="hero overlay subpage-hero2 blog-hero site-header-white">
         <div class="hero-content">
             <div class="hero-text" >
                 <h1>Blog</h1>
@@ -20,7 +20,7 @@
                 <div class="row">
                     <div class="col-md-8">
                         {% for posteo in object_list %}
-                        <article class="blog-post">
+                        <article class="blog-post" style="margin-bottom: 100px;">
                             <a href="{% url 'blog:DetallePosteo' posteo.id %}">
                                 {% if '.' in posteo.imagen.url %}
                                 <img src="{{posteo.imagen.url}}" class="img-res" alt="">
@@ -29,26 +29,23 @@
                             <div class="post-content">
                                 <h3 class="post-title"><a href="{% url 'blog:DetallePosteo' posteo.id %}">{{posteo.titulo}}</a></h3>
                                 <p>{{posteo.subtitulo}}</p>
+                                    
+                                <p class="subheading-text" style="position: right;"> 
+                                    {{posteo.autor}}   /   {{posteo.fecha}}   /                                            
+                                    <a class="read-more" href="{% url 'blog:DetallePosteo' posteo.id %}">Seguir leyendo</a>
+                                </p>
                                 
-                                <div class="post-meta">
-                                    <span class="post-author">
-                                        <a href="{% url 'blog:DetallePosteo' posteo.id %}">{{posteo.autor}}</a>
-                                    </span>
-                                    <span class="post-date">
-                                        <a href="{% url 'blog:DetallePosteo' posteo.id %}"><i class="fa fa-calendar" aria-hidden="true"></i>{{posteo.fecha}}</a>
-                                        </span>
-                                    <span class="post-category">
-                                        <a class="read-more" href="{% url 'blog:DetallePosteo' posteo.id %}">Seguir leyendo</a>
-                                    </span>
-                                </div><!-- /.post-meta -->
                             </div><!-- /.post-content -->
-                            <hr>
+                            <br>
+                            
+                            <br>
+                            <hr style="height:3px;border:none;color:#333;background-color:#333;" />
                         </article><!-- /.blog-post -->
                         {% endfor %}
                         {% if user.is_authenticated %}
                         {% if user.is_superuser %}
                             <div>
-                                <h3><a class="btn btn-border" href="{% url 'blog:AgregarPosteo' %}" >Nuevo post</a></h3>                         
+                                <h3><a class="btn btn-border" style="margin-top: 50px;" href="{% url 'blog:AgregarPosteo' %}" >Nuevo post</a></h3>                         
                             </div>
                         {% endif %}
                         {% endif %}
@@ -57,7 +54,7 @@
                         <div class="sidebar">
                             <div class="widget search-form">
                                 <h4 class="widget-title">Buscar</h4>
-                                <form class="form-group" action="/home/buscar/" method="GET"> {% csrf_token %}
+                                <form class="form-group" action="/busqueda/buscar/" method="GET"> {% csrf_token %}
                                     <input type="text" class="form-control" placeholder="Buscar en sitio" required , name= "busqueda", id= "busqueda">
                                     <button class="btn btn-green" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                                 </form>
@@ -86,16 +83,6 @@
                                     {% endfor %}
                                 </ul>
                             </div><!-- /.widget-categories -->
-                            <div class="widget widget-tags">
-                                <h4 class="widget-title">Tags</h4>
-                                <ul class="list-unstyled">
-                                    <li><a href="#">Web Design</a></li>
-                                    <li><a href="#">Web Development</a></li>
-                                    <li><a href="#">PSD Template</a></li>
-                                    <li><a href="#">Responsive Design</a></li>
-                                    <li><a href="#">Development</a></li>
-                                </ul>
-                            </div><!-- /.widget-tags -->
                         </div><!-- /.sidebar -->
                     </aside>
                 </div>
