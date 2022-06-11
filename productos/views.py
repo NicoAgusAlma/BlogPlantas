@@ -20,14 +20,14 @@ class ProductoDetail(DetailView):
 class ProductoCreate(LoginRequiredMixin, CreateView):
     model = Producto
     success_url = reverse_lazy('productos:ListaProductos')
-    fields = ['nombre','precio','solucionaProblemas','puntoDeVenta', 'imagen']
+    fields = ['nombre','precio','puntoDeVenta', 'imagen']
     def get_template_names(self):         
         return 'productos/producto_form.html'
 
 class ProductoUpdate(LoginRequiredMixin, UpdateView):
     model = Producto
     success_url = reverse_lazy('productos:ListaProductos')
-    fields = ['nombre','precio','solucionaProblemas','puntoDeVenta', 'imagen']
+    fields = ['nombre','precio','puntoDeVenta', 'imagen']
     def get_template_names(self):         
         return 'productos/producto_form.html'
 

@@ -20,12 +20,6 @@ urlpatterns = [
     path('categoria/<int:pk>/delete/', views.CategoriaDelete.as_view(), name='BorrarCategoria'),
 
    ]
-
-
-
-
-
-   # VERIFICAR PERMISOS DE USUARIO EN DISTINTAS PAGINAS!!!
-   # ARREGLAR CASILLAS DE TILDE!!!
+  
    # VER LO DE LOS COMENTARIOS EN LOS POSTEOS!!!
    

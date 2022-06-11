@@ -177,10 +177,11 @@ button.btn:focus {
 /* ELEMENTS
 ================================================== */
 /* Checkbox fields */
+
 input[type=checkbox],
 input[type=radio] {
     position: absolute;
-    visibility: hidden;
+    /* visibility: hidden; */
     height: auto;
     margin-top: 0;
 }

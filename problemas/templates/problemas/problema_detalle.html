@@ -5,21 +5,43 @@
     <main id="main" class="site-main">
         
 
-        <section class="site-section section-features" style="padding-bottom: 0px;">
+        <section class="site-section section-features" style="padding-bottom: 100px;">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-5">
-                        <h2>Informacion: {{problema.nombreProblema}}</h2>
+                        <h1>{{problema.nombreProblema}}</h1>
                         
-                        <br>   
-                        <p><h3>Nombre cientifico: {{problema.nombreCientifico}}</h3></p>
-                        <p><h3>Peligro: {{problema.peligro}}</h3></p>
-                        <p><h3>Productos recomendados para tratarlo: {{problema.productos}}</h3></p>
-                        <p><h3>Forma de tratarlo: {{problema.solucion}}</h3></p>
+                        <br> 
+                        <div style="clear: both">
+                            <h4 style="text-decoration-line: underline; float: left" >Nombre cientifico:  </h4>
+                            <h4 style="float: left; margin-left: 5px;" >{{problema.nombreCientifico}}</h4>
+                        </div> 
+                        <br>  
+                        
+                        <div style="clear: both">
+                            <h4 style="text-decoration-line: underline; float: left" >Nivel de peligro:  </h4>
+                            <h4 style="float: left; margin-left: 5px;" >{{problema.peligro}}</h4>
+                        </div> 
+                        <br> 
+                        
+                        <div style="clear: both">
+                            <h4 style="text-decoration-line: underline; float: left" >Productos recomendados para tratarlo:</h4>
+                            <h4 style="float: left; margin-left: 5px;" >
+                                {% for producto in problema.productos.all %}
+                                {{producto}}   <br>
+                                {% endfor %}</h4>
+                        </div> 
                         <br>
-                        <div class="subpage-hero">
+                        
+                        <div style="clear: both">
+                            <h4 style="text-decoration-line: underline; float: left" >Forma de tratarlo:  </h4>
+                            <h4 style="float: left; margin-left: 5px; margin-bottom: 50px;" >{{problema.solucion}}</h4>
+                        </div> 
+                        <br> 
+                        
+                        <div class="subpage-hero" style="margin-top: 70px;">
                         <h3><a class="btn btn-border" href="{% url 'problemas:ListaProblemas' %}" >Listado de problemas</a>
-                        <a class="btn btn-border" onclick="history.back()">Volver</a></h3>  
+                        <a class="btn btn-border"  onclick="history.back()">Volver</a></h3>  
                         </div>
                                         
                                         

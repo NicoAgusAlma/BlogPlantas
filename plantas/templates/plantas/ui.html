@@ -1,0 +1,108 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block contenidoQueCambia %}
+
+    <div id="hero" class="hero overlay subpage-hero portfolio-hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>UI Elements</h1>
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#">Home</a></li>
+                  <li class="breadcrumb-item active">UI Elements</li>
+                </ol>
+            </div><!-- /.hero-text -->
+        </div><!-- /.hero-content -->
+    </div><!-- /.hero -->
+
+    <main id="main" class="site-main">
+
+        <section class="site-section section-ui-elements">
+            <div class="container">
+
+                <div class=" mt-50">
+                    <h2 class="text-center heading-separator">Selectpicker, Checkboxes and Radiobuttons</h2>
+                    <div class="row">
+                        
+                        <div class="col-sm-4">
+                            <select class="selectpicker">
+                                <option>France</option>
+                                <option>Spain</option>
+                                <option>Italy</option>
+                            </select>
+                        </div>
+
+                        <div class="col-sm-4 mt-20">
+                            <div class="checkbox">
+                                <input type="checkbox" id="checkbox1">
+                                <label for="checkbox1">Red</label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" id="checkbox2">
+                                <label for="checkbox2">Yellow</label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" id="checkbox3">
+                                <label for="checkbox3">White</label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" id="checkbox4">
+                                <label for="checkbox4">Green</label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" id="checkbox5">
+                                <label for="checkbox5">Black</label>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4 mt-20">
+                            <div class="radio-btn">
+                                <input type="radio" name="radio-btn" id="radio-btn1">
+                                <label for="radio-btn1">Football</label>
+                            </div>
+                            <div class="radio-btn">
+                                <input type="radio" name="radio-btn" id="radio-btn2">
+                                <label for="radio-btn2">Basketball</label>
+                            </div>
+                            <div class="radio-btn">
+                                <input type="radio" name="radio-btn" id="radio-btn3">
+                                <label for="radio-btn3">Volleyball</label>
+                            </div>
+                            <div class="radio-btn">
+                                <input type="radio" name="radio-btn" id="radio-btn4">
+                                <label for="radio-btn4">Baseball</label>
+                            </div>
+                            <div class="radio-btn">
+                                <input type="radio" name="radio-btn" id="radio-btn5">
+                                <label for="radio-btn5">Hockey</label>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /.selectpicker-checkboxes-radiobtn -->
+
+                        
+                <div class="ui-pagination mt-50">
+                    <h2 class="text-center heading-separator">Pagination</h2>
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <ul class="pagination">
+                                <li><a href="#">&lt;&lt;</a></li>
+                                <li><a href="#">&lt;</a></li>
+                                <li class="more"><a href="#">...</a></li>
+                                <li><a href="#">31</a></li>
+                                <li class="active"><a href="#">32</a></li>
+                                <li><a href="#">33</a></li>
+                                <li class="more"><a href="#">...</a></li>
+                                <li><a href="#">&gt;</a></li>
+                                <li><a href="#">&gt;&gt;</a></li>
+                            </ul><!-- /.pagination -->               
+                        </div>
+                    </div>
+                </div><!-- /.ui-pagination -->
+
+            </div>
+        </section><!-- /.section-ui-elements -->
+
+    </main><!-- /#main -->
+
+    {% endblock %}
+

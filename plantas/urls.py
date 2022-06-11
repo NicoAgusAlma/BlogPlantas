@@ -11,4 +11,6 @@ urlpatterns = [
     path('<int:pk>/detail/', views.PlantaDetail.as_view(), name='DetallePlanta'),
     path('<int:pk>/update/', views.PlantaUpdate.as_view(), name='UpdatePlanta'),
     path('<int:pk>/delete/', views.PlantaDelete.as_view(), name='BorrarPlanta'),
+    path('ui/', views.ui, name='Ui'),
+   
    ]

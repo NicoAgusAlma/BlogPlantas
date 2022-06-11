@@ -16,7 +16,10 @@
                             
                             {{form.as_p}}                                                       
                             <input  class="btn btn-border" style="margin-top: 50px;" type="submit" value="Enviar"/> 
-                            <a class="btn btn-border" style="margin-top: 50px;" href="{% url 'blog:ListaPosteos' %}">Volver</a>                                                     
+                            <a class="btn btn-border" style="margin-top: 50px;" href="{% url 'blog:ListaPosteos' %}">Volver</a>   
+                            {% if user.is_superuser %}
+                            <a class="btn btn-border" style="margin-top: 20px;" href="{% url 'blog:ListaCategorias' %}" >Categorias</a>                                                  
+                            {% endif %}
                         </form>
                         
                     </div>

@@ -14,4 +14,4 @@ urlpatterns = [
     path('avatar/<int:pk>/update/', views.UpdateAvatarView.as_view(), name='UpdateAvatar'),
         
     ]
-    # Almlm23423 9787LKGLKGlg
+   

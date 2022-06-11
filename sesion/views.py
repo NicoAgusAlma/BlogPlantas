@@ -34,8 +34,8 @@ def login_request(request):
             try:
                 form2.save()
                 return render(request=request, 
-                template_name='home/inicio.html', 
-                context={'mensaje':', Usuario creado'})
+                template_name='home/mensaje.html', 
+                context={'mensaje':'Usuario creado, por favor, inicie sesion.'})
             except:
                 return render(request, 'home/mensaje.html', {'mensaje_titulo':'Error','mensaje': 'Formulario erroneo'})
         else:
@@ -79,19 +79,6 @@ class UpdateAvatarView(UpdateView):
     success_url = reverse_lazy('sesion:Perfil')
     def get_template_names(self):         
         return 'sesion/avatar.html'
-
-   
-# def Perfil(request):
-#     usuario=User.objects.filter(user=request.first_name)
-#     contexto={'usuario':usuario}
-#     return render(request, 'sesion/perfil.html', contexto)
-
-
-
-# def Perfil(request):
-#     extra_context = get_avatar(request)    
-#     usuario = User
-
 
 def get_avatar(request):   
     avatars=Avatar.objects.filter(user=request.user.id)

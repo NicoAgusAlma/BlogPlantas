@@ -5,20 +5,32 @@
     <main id="main" class="site-main">
         
 
-        <section class="site-section section-features" style="padding-bottom: 0px;">
+        <section class="site-section section-features" style="min-height: 700px;">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-5">
-                        <h2>Informacion del vivero:</h2>
+                        <h1>{{vivero.nombre}}</h1>
                         
                         <br>
-                        
-                        <p><h3>{{vivero.nombre}}<br><br>
-                        {{vivero.provincia}}, {{vivero.localidad}}<br><br>
-                        {{vivero.calle}} {{vivero.altura}}<br><br>
-                        Telefono: {{vivero.telefono}}</h3></p><br>
+                        <div style="clear: both">
+                            <h4 style="text-decoration-line: underline; float: left" >Ubicacion:  </h4>
+                            <h4 style="float: left; margin-left: 5px;" >{{vivero.provincia}}, {{vivero.localidad}}</h4>
+                        </div> 
+                        <br> 
+
+                        <div style="clear: both">
+                            <h4 style="text-decoration-line: underline; float: left" >Direccion:  </h4>
+                            <h4 style="float: left; margin-left: 5px;" >{{vivero.calle}} {{vivero.altura}}</h4>
+                        </div> 
+                        <br> 
+
+                        <div style="clear: both">
+                            <h4 style="text-decoration-line: underline; float: left" >Telefono:  </h4>
+                            <h4 style="float: left; margin-left: 5px;" >{{vivero.telefono}}</h4>
+                        </div> 
+                        <br>
                        
-                        <div class="subpage-hero">
+                        <div class="subpage-hero" style="margin-top: 70px;">
                             <h3><a class="btn btn-border" href="{% url 'viveros:ListaViveros' %}" >Listado de viveros</a> 
                             <a class="btn btn-border" onclick="history.back()">Volver</a></h3>  
                         </div> 

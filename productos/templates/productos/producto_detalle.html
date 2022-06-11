@@ -5,18 +5,27 @@
     <main id="main" class="site-main">
         
 
-        <section class="site-section section-features" style="padding-bottom: 0px;">
+        <section class="site-section section-features" style="min-height: 700px;">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-5">
-                        <h2>Informacion: {{producto.nombre}}</h2>
+                        <h1>{{producto.nombre}}</h1>
                         
                         <br>   
-                        <p><h3>Valor promedio U$s: {{producto.precio}}</h3></p>
-                        <p><h3>Viveros donde entontrarla: {{producto.puntoDeVenta}}</h3></p>
-                        <p><h3>Problemas que soluciona: {{producto.solucionaProblemas}}</h3></p>
+                        <div style="clear: both">
+                            <h4 style="text-decoration-line: underline; float: left" >Valor promedio:  </h4>
+                            <h4 style="float: left; margin-left: 5px;" >U$s {{producto.precio}}</h4>
+                        </div> 
                         <br>
-                        <div  class="subpage-hero">
+                        
+                        <div style="clear: both">
+                            <h4 style="text-decoration-line: underline; float: left" >Viveros donde entontrarla:  </h4>
+                            <h4 style="float: left; margin-left: 5px;" >{{producto.puntoDeVenta.nombre}}</h4>
+                        </div> 
+                        <br>                        
+                        
+                        <br>
+                        <div  class="subpage-hero" style="margin-top: 70px;">
                         <h3><a class="btn btn-border" href="{% url 'productos:ListaProductos' %}" >Listado de productos</a>
                         <a class="btn btn-border" onclick="history.back()">Volver</a></h3>  
                         </div>              

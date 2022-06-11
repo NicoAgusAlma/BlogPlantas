@@ -12,7 +12,7 @@
                         <h2>Datos de la planta:</h2>
                         
                         <br>
-                        <form  method="post" enctype="multipart/form-data">{%csrf_token%}
+                        <form class="selectpicker-checkboxes-radiobtn"  method="post" enctype="multipart/form-data">{%csrf_token%}
                             {{ form.as_p }}
                             <input class="btn btn-border" style="margin-top: 50px;" type="submit" value="Enviar"/>                             
                             <a  class="btn btn-border" style="margin-top: 50px;" href="{% url 'plantas:ListaPlantas' %}">Volver</a>

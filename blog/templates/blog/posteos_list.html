@@ -49,6 +49,10 @@
                                 <a class="btn btn-border" style="margin-top: 50px;" href="{% url 'blog:ListaCategorias' %}" >Categorias</a></h3>                         
                             </div>
                         {% endif %}
+                        {% else %}
+                        <p class="subheading-text" style="position: right;"> 
+                            Solo los super usuarios pueden crear posteos. 
+                        </p>
                         {% endif %}
                     </div>
                     <aside class="col-md-4">

@@ -46,14 +46,6 @@ class PosteoDelete(LoginRequiredMixin, DeleteView):
     def get_template_names(self):         
         return 'blog/posteo_confirm_delete.html'
 
-# class CategoriaList(ListView):
-#     model = Posteo
-#     template_name = 'blog/posteos_filtrados.html'
-#     plant_list = Planta.objects.all()
-#     usuarios = User.objects.all()
-#     categorias = Categoria.objects.all()
-#     extra_context= {'plant_list':plant_list, 'usuarios':usuarios, 'categorias':categorias}
-
 def CategoriaList(request, cate):
     posteos_filtrados = Posteo.objects.filter(categoria=cate)
     categorias = Categoria.objects.all()
