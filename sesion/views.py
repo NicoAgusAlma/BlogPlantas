@@ -44,21 +44,6 @@ def login_request(request):
     form2=UserRegisterForm()
     return render(request, 'sesion/login.html', {'form':form, 'form2':form2})
 
-# def editar_perfil(request):
-#     usuario = request.user
-#     if request.method == 'POST':
-#         miFormulario = UserEditForm(request.POST)
-#         if miFormulario.is_valid:
-#             informacion = miFormulario.cleaned_data
-#             usuario.email = informacion['email']
-#             usuario.password1 = informacion['password1']
-#             usuario.password2 = informacion['password2']
-#             usuario.save()
-#             return render(request, 'home/inicio.html')
-#     else:
-#         miFormulario=UserEditForm(initial={'email':usuario.email} )
-#     return render(request, 'sesion/editar_perfil.html', {'miFormulario':miFormulario, 'usuario':usuario})
-
 def editar_perfil(request):
     user = request.user
     if request.method == 'POST':

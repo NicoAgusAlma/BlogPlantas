@@ -45,7 +45,8 @@
                         {% if user.is_authenticated %}
                         {% if user.is_superuser %}
                             <div>
-                                <h3><a class="btn btn-border" style="margin-top: 50px;" href="{% url 'blog:AgregarPosteo' %}" >Nuevo post</a></h3>                         
+                                <h3><a class="btn btn-border" style="margin-top: 50px;" href="{% url 'blog:AgregarPosteo' %}" >Nuevo post</a>
+                                <a class="btn btn-border" style="margin-top: 50px;" href="{% url 'blog:ListaCategorias' %}" >Categorias</a></h3>                         
                             </div>
                         {% endif %}
                         {% endif %}
