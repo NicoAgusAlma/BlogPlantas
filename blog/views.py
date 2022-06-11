@@ -16,6 +16,7 @@ from django.contrib.auth.models import User
 class PosteoList(ListView):
     model = Posteo
     template_name = 'blog/posteos_list.html'
+    ordering = ['-fecha']
     plant_list = Planta.objects.all()
     usuarios = User.objects.all()
     categorias = Categoria.objects.all()

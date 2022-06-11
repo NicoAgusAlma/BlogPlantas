@@ -12,7 +12,7 @@ for item in cat:
 class BlogPost(forms.ModelForm):
     class Meta:
         model=Posteo
-        fields = ('titulo','subtitulo','autor','fecha', 'texto', 'categoria', 'imagen')
+        fields = ('titulo','subtitulo','autor', 'texto', 'categoria', 'imagen')
         widgets = {
             'autor': forms.TextInput(attrs={'palceholder':'user name', 'id':'usuarioImagen', 'type':'hidden'}),
             'categoria': forms.Select(choices=choice_list),
