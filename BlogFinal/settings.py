@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'galeria',
     'contacto',
     'busqueda',
+    'ckeditor'
 ]
 
 MIDDLEWARE = [
