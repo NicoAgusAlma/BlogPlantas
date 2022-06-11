@@ -1,5 +1,6 @@
 from django.contrib import admin
-from blog.models import Posteo
+from blog.models import Posteo, Categoria
 
 # Register your models here.
 admin.site.register(Posteo)
+admin.site.register(Categoria)

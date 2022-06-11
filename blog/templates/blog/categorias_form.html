@@ -9,22 +9,23 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-5">
-                        <h2>Datos vivero:</h2>
+                        <h2>Datos de la categoria:</h2>
                         
                         <br>
                         <form method="post" enctype="multipart/form-data">{%csrf_token%}
                             {{ form.as_p }}
-                            <input class="btn btn-border" style="margin-top: 50px;" type="submit" value="Enviar"/>   
-                            <a class="btn btn-border" style="margin-top: 50px;" onclick="history.back()">Volver</a>
+                            <input class="btn btn-border" style="margin-top: 50px;" type="submit" value="Enviar"/>                             
                         </form>
-                        
+                        <a class="btn btn-border" style="margin-top: 50px;" href="{% url 'blog:ListaCategorias' %}">Volver</a>
                     </div>
                     <div class="col-sm-7 hidden-xs">
-                        <img src="{% static 'viveros/assets/img/vivero.png' %}" alt="">
+                        <img src="{% static 'home/assets/img/plantas.png' %}" alt="">
                     </div>
                 </div>
             </div>
         </section>
+
+    
 
     </main><!-- /#main -->
 

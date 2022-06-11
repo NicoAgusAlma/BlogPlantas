@@ -14,9 +14,10 @@
                         <br>
                         <form method="post" enctype="multipart/form-data">{%csrf_token%}
                             {{ form.as_p }}
-                            <input type="submit" value="Enviar"/>                             
+                            <input class="btn btn-border" style="margin-top: 50px;" type="submit" value="Enviar"/>                             
+                            <a  class="btn btn-border" style="margin-top: 50px;" href="{% url 'plantas:ListaPlantas' %}">Volver</a>
                         </form>
-                        <a href="{% url 'plantas:ListaPlantas' %}">Volver</a>
+                        
                     </div>
                     <div class="col-sm-7 hidden-xs">
                         <img src="{% static 'home/assets/img/plantas.png' %}" alt="">

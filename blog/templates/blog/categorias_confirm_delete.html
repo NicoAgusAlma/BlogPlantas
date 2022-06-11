@@ -3,35 +3,32 @@
 {% block contenidoQueCambia %}
 
     <main id="main" class="site-main">
-        
-
         <section class="site-section section-features">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-5">
-                        <h2>Eliminar problema:</h2>
+                        <h2>Eliminar categoria:</h2>
                         
                         <br>
                         <form method="post">{% csrf_token %}
 
-                            <h3>Esta seguro de querer eliminar "{{object.nombreProblema}}"?</h3>
+                            <h3>Esta seguro de querer eliminar "{{categoria.nombre}}"?</h3>
                             <br>
                             <br>
                             <input class="btn btn-border" type="submit" value="Eliminar">
-                            <h3>
-                            <a class="btn btn-border" onclick="history.back()">Volver</a>
-                            </h3>
+                            <h3><a class="btn btn-border" onclick="history.back()">Volver</a></h3>  
+
                         </form>       
                     
                     </div>
                     <div class="col-sm-7 hidden-xs">
-                        <img src="{% static 'home/assets/img/enferma.jpg' %}" alt="">
+                        <img src="{% static 'home/assets/img/portfolio-1.jpg' %}" alt="">
                     </div>
                 </div>
             </div>
         </section>
 
-  
+     
 
     </main><!-- /#main -->
 

@@ -16,6 +16,7 @@
                         <p>{{posteo.fecha}}</p>
                         <p>{{posteo.texto}}</p> 
                         <p><h4>{{posteo.autor}}</h4></p>
+                        <p><h5>{{posteo.categoria}}</h5></p>
                         <br>
                         {% if user.is_authenticated %}
                         {% if user.is_superuser %}
@@ -42,7 +43,9 @@
                    
 
                     <div class="" style="margin-top: 150px; ">
+                        {% if posteo.imagen %}
                         <img src="{{posteo.imagen.url}}" alt="" style="max-width: 700px;  margin-right: 200px;">
+                        {% endif %}
                     </div>
                 </div>
             </div>

@@ -17,9 +17,9 @@
                         <p><h3>Productos recomendados para tratarlo: {{problema.productos}}</h3></p>
                         <p><h3>Forma de tratarlo: {{problema.solucion}}</h3></p>
                         <br>
-                        <div style="text-decoration-line: underline;" class="subpage-hero">
-                        <h3><a href="{% url 'problemas:ListaProblemas' %}" >Listado de problemas</a></h3> 
-                        <h3><a onclick="history.back()">Volver</a></h3>  
+                        <div class="subpage-hero">
+                        <h3><a class="btn btn-border" href="{% url 'problemas:ListaProblemas' %}" >Listado de problemas</a>
+                        <a class="btn btn-border" onclick="history.back()">Volver</a></h3>  
                         </div>
                                         
                                         

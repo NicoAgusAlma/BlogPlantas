@@ -9,24 +9,25 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-5">
-                        <h2>Todos los viveros:</h2>
+                        <h2>Todas las categorias:</h2>
                         
                         <br>
                         <ul> <h3>
                         
-                        {% for vivero in object_list %}
+                        {% for categoria in object_list %}
 
-                            <li>                            
-                                <a href="{% url 'viveros:DetalleVivero' vivero.id %}">
-                                    <i style="color: rgb(0, 0, 0);">{{vivero.nombre}} en {{vivero.localidad}}</i>
+                            <li> 
+                            
+                                <a>
+                                    <i style="color: rgb(0, 0, 0);">{{categoria.nombre}}</i>
                                 </a>
-                                {% if user.is_authenticated %}
+                                {% if user.is_superuser %}
                                 (
-                                <a href="{% url 'viveros:UpdateVivero' vivero.id %}">
+                                <a href="{% url 'blog:UpdateCategoria' categoria.id %}">
                                     <i class="fa fa-pencil" style="color: rgb(0, 0, 0);"> </i>
                                 </a>
                                 |
-                                <a href="{% url 'viveros:BorrarVivero' vivero.id %}">
+                                <a href="{% url 'blog:BorrarCategoria' categoria.id %}">
                                     <i class="fa fa-trash" style="color: rgb(0, 0, 0);"> </i>
                                 </a>
                                 )
@@ -35,22 +36,24 @@
                         {% endfor %}
                         
                         </h3></ul>
-                        {% if user.is_authenticated %}
-                        <div >
-                        <h3><a class="btn btn-border" href="{% url 'viveros:AgregarVivero' %}" >Nuevo vivero</a></h3>                         
-                        </div>
-                        {% endif %}
-                                  
+                            {% if user.is_authenticated %}
+                            <div style="text-decoration-line: underline;">
+                                <h3><a class="btn btn-border" href="{% url 'blog:AgregarCategoria' %}" >Nueva categoria</a></h3>                         
+                            </div>
+                            {% endif %}
+                    
+                    
                     
                     </div>
                     <div class="col-sm-7 hidden-xs">
-                        <img src="{% static 'home/assets/img/vivero.png' %}" alt="">
+                        <img src="{% static 'home/assets/img/plantas.png' %}" alt="" >
                     </div>
                 </div>
             </div>
         </section>
 
-        
+     
+
     </main><!-- /#main -->
 
     {% endblock %}
