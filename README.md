@@ -5,13 +5,10 @@
 git clone https://github.com/NicoAgusAlma/BlogPlantas
 
 cd BlogPlantas
-
 ```
 - Verificar cual es la ultima version y cambiar a esa rama
 ```bash
-
 git checkout 12-6-2022
-
 ```
 
 - En caso de desear un entorno virtual en Windows (No es obligatorio):
@@ -35,7 +32,6 @@ ALLOWED_HOSTS=*,
 
 - Instalar las dependencias del proyecto
 ```bash
-
 pip install -r requirements.txt
 ```
 
@@ -48,7 +44,6 @@ python manage.py migrate
 ```bash
 python manage.py createsuperuser
 ```
-
 
 - Crear estáticos
 ```bash
