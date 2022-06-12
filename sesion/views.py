@@ -1,4 +1,3 @@
-from re import A
 from django.urls import reverse_lazy
 from django.shortcuts import redirect, render
 from django.forms.models import model_to_dict
