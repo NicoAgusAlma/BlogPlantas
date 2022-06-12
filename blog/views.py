@@ -5,8 +5,8 @@ from django.shortcuts import render
 from django.views.generic import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from blog.forms import BlogPost
-from blog.models import Categoria, Posteo
+from blog.forms import BlogPost, Comentar
+from blog.models import Categoria, Posteo, Comentario
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 from plantas.models import Planta
@@ -75,3 +75,16 @@ class CategoriaDelete(LoginRequiredMixin, DeleteView):
     success_url = reverse_lazy('blog:ListaCategorias')
     def get_template_names(self):         
         return 'blog/categorias_confirm_delete.html'
+
+class ComentarioCreate(LoginRequiredMixin, CreateView):
+    model = Comentario
+    success_url = reverse_lazy('blog:ListaPosteos')
+    form_class = Comentar
+    def get_template_names(self):         
+        return 'blog/comentario_form.html'
+
+class ComentarioDelete(LoginRequiredMixin, DeleteView):
+    model = Comentario
+    success_url = reverse_lazy('blog:ListaPosteos')
+    def get_template_names(self):         
+        return 'blog/comentario_confirm_delete.html'

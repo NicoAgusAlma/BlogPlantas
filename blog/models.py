@@ -22,3 +22,12 @@ class Categoria(models.Model):
 
     def __str__(self):
         return f'{self.nombre}'
+
+class Comentario(models.Model):
+    post=models.ForeignKey(Posteo, related_name='comentario', on_delete=models.CASCADE)
+    nombre=models.ForeignKey(User, on_delete=models.CASCADE)
+    texto = models.TextField()
+    fecha = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'{self.post.titulo} - {self.nombre}'

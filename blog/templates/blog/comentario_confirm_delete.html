@@ -1,0 +1,35 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block contenidoQueCambia %}
+
+    <main id="main" class="site-main">
+        <section class="site-section section-features">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-5">
+                        <h2>Eliminar comentario:</h2>
+                        
+                        <br>
+                        <form method="post">{% csrf_token %}
+
+                            <h3>Esta seguro de querer eliminar el comentario de {{comentario.nombre}} en {{comentario.texto}} "?</h3>
+                            <br>
+                            <br>
+                            <input class="btn btn-border" type="submit" value="Eliminar">
+                            <a class="btn btn-border" class="btn btn-border" onclick="history.back()">Volver</a>
+
+                        </form>       
+                    
+                    </div>
+                    <div class="col-sm-7 hidden-xs">
+                        <img src="{% static 'home/assets/img/portfolio-1.jpg' %}" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+     
+
+    </main><!-- /#main -->
+
+    {% endblock %}

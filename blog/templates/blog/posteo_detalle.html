@@ -18,7 +18,36 @@
                         <p><h4>{{posteo.autor}}</h4></p>
                         <p><h5>{{posteo.categoria}}</h5></p>
                         <br>
+                        <hr>
+
+                        <h2>Comentarios:</h2>
+                        {% if not posteo.comentario.all %}
+                        Ningun comentario aun...
+                        {% else %}
+                        {% for coment in posteo.comentario.all %}
+                        <p><h4>{{coment.texto}}</h4></p>
+                        <h5>{{coment.nombre}} / {{coment.fecha}}</h5>
+                        {% if user.is_superuser %}
+                            
+                                
+                                <a href="{% url 'blog:EliminarComentario' coment.id %}">
+                                    <i class="btn btn-border" style="color: rgb(0, 0, 0);"> Eliminar </i>
+                                </a>
+                                
+                            
+                            <br>
+                        {% endif %}
+                        <br>
+                        <hr>
+                        {% endfor %}
+                        {% endif %}
+
                         {% if user.is_authenticated %}
+                        <div>
+                        <a href="{% url 'blog:AgregarComentario' posteo.id %}">
+                            <i class="btn btn-border" style="color: rgb(0, 0, 0); margin-bottom: 20px;"> Comentar </i>
+                        </a>
+                        </div>
                         {% if user.is_superuser %}
                             
                                 <a href="{% url 'blog:UpdatePosteo' posteo.id %}">
