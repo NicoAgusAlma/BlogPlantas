@@ -12,7 +12,8 @@
                         <br>
                         <form method="post">{% csrf_token %}
 
-                            <h3>Esta seguro de querer eliminar el comentario de {{comentario.nombre}} en {{comentario.texto}} "?</h3>
+                            <h3>Esta seguro de querer eliminar el comentario de {{comentario.nombre}}:<br></h3>
+                            <h4>{{comentario.texto}} "?</h4>
                             <br>
                             <br>
                             <input class="btn btn-border" type="submit" value="Eliminar">

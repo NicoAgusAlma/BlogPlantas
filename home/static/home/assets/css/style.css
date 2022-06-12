@@ -939,6 +939,7 @@ html, body {
 .subheading-text {
     font-size: 20px;
     font-style: italic;
+    
 }
 
 /* .heading-separator {
@@ -1408,6 +1409,7 @@ a.linkedin-bg:hover {
 
 .post-content p {
     margin: 25px 0 0;
+    
 }
 
 .post-content .post-title a {
@@ -1415,16 +1417,19 @@ a.linkedin-bg:hover {
 }
 
 .post-content a {
-    color: #8c8f94;   
+    color: #000000; 
+      
 }
 
 .post-content .read-more {
     position: relative;
     padding-right: 30px;
     text-transform: uppercase;
+    font-weight: 900;
+    text-decoration-line: underline;
 }
 
-.post-content .read-more:after {
+/* .post-content .read-more:after {
     content: '';
     display: block;
     background-color: #8c8f94;  
@@ -1438,7 +1443,7 @@ a.linkedin-bg:hover {
     -webkit-transition: background-color 0.25s ease-in-out;
     -o-transition: background-color 0.25s ease-in-out;
     -ms-transition: background-color 0.25s ease-in-out;
-}
+} */
 
 .post-content .read-more:hover:after {
     background-color: #6fc754; 

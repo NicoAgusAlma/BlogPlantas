@@ -26,17 +26,18 @@
                                 <img src="{{posteo.imagen.url}}" class="img-res" alt="">
                                 {% endif %}
                             </a>
-                            <div class="post-content">
+                            <div class="post-content" >
                                 <h3 class="post-title"><a href="{% url 'blog:DetallePosteo' posteo.id %}">{{posteo.titulo}}</a></h3>
                                 <p>{{posteo.subtitulo}}</p>
-                                    
-                                <p class="subheading-text" style="position: right;"> 
+                                 <h3>   
+                                <div style="font-size: 20px; font-style:italic; text-align: right; "> 
                                     {{posteo.autor}}   /   {{posteo.fecha}}   /                                            
                                     <a class="read-more" href="{% url 'blog:DetallePosteo' posteo.id %}">Seguir leyendo</a>
-                                </p>
+                                </div>
+                                </h3>
                                 
                             </div><!-- /.post-content -->
-                            <br>
+                            
                             
                             <br>
                             <hr style="height:3px;border:none;color:#333;background-color:#333;" />
@@ -70,7 +71,7 @@
                                     
                                     {% for posteo in object_list %}
                                     {% if forloop.revcounter <= 5 %}
-                                    <li><a href="/blog/posteo/{{posteo.id}}/detail">{{posteo.titulo}}</a></li>
+                                    <li><a href="/blog/{{posteo.id}}/detail">{{posteo.titulo}}</a></li>
                                     {% endif %}
                                     {% endfor %}
                                     

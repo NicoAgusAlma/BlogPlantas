@@ -39,9 +39,9 @@
                                         
                     </div>
                     <div class="col-sm-6 hidden-xs">
-                        
+                        {% if user.avatar %}
                         <img src="{{user.avatar.imagen.url}}" style="margin-top: 100px;" > 
-                        
+                        {% endif %}
                     </div>
                 </div>
             </div>

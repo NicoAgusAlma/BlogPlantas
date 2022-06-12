@@ -23,6 +23,9 @@
                         <h2>Comentarios:</h2>
                         {% if not posteo.comentario.all %}
                         Ningun comentario aun...
+                        <br>
+                        <br>
+                        <hr>
                         {% else %}
                         {% for coment in posteo.comentario.all %}
                         <p><h4>{{coment.texto}}</h4></p>
@@ -31,7 +34,7 @@
                             
                                 
                                 <a href="{% url 'blog:EliminarComentario' coment.id %}">
-                                    <i class="btn btn-border" style="color: rgb(0, 0, 0);"> Eliminar </i>
+                                    <i class="btn btn-border" style="color: rgb(0, 0, 0);"> Eliminar coment </i>
                                 </a>
                                 
                             
@@ -45,7 +48,7 @@
                         {% if user.is_authenticated %}
                         <div>
                         <a href="{% url 'blog:AgregarComentario' posteo.id %}">
-                            <i class="btn btn-border" style="color: rgb(0, 0, 0); margin-bottom: 20px;"> Comentar </i>
+                            <i class="btn btn-border" style="color: rgb(0, 0, 0); margin-bottom: 20px;"> Comentar post</i>
                         </a>
                         </div>
                         {% if user.is_superuser %}
@@ -55,7 +58,7 @@
                                 </a>
                                 
                                 <a href="{% url 'blog:BorrarPosteo' posteo.id %}">
-                                    <i class="btn btn-border" style="color: rgb(0, 0, 0);"> Eliminar </i>
+                                    <i class="btn btn-border" style="color: rgb(0, 0, 0);"> Eliminar post</i>
                                 </a>
                                 
                             

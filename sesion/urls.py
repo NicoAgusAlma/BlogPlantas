@@ -7,7 +7,7 @@ app_name='sesion'
 urlpatterns = [
     # PLANTAS
     path('login', views.login_request, name='Login'),
-    path('<int:pk>/perfil', views.Perfil.as_view(), name='Perfil'),
+    path('perfil', views.Perfil.as_view(), name='Perfil'),
     path('editarPerfil', views.editar_perfil, name='EditarPerfil'),
     path('logout', LogoutView.as_view(template_name='sesion/logout.html'), name='Logout'),
     path('avatar/', views.CreateAvatarView.as_view(), name='Avatar'),

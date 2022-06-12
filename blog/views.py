@@ -78,7 +78,7 @@ class CategoriaDelete(LoginRequiredMixin, DeleteView):
 
 class ComentarioCreate(LoginRequiredMixin, CreateView):
     model = Comentario
-    success_url = reverse_lazy('blog:ListaPosteos')
+    # success_url = reverse_lazy('blog:ListaPosteos')
     form_class = Comentar
 
     def form_valid(self, form):
@@ -88,8 +88,17 @@ class ComentarioCreate(LoginRequiredMixin, CreateView):
     def get_template_names(self):         
         return 'blog/comentario_form.html'
 
+    def get_success_url(self):
+          postID=self.kwargs['pk']
+          return reverse_lazy('blog:DetallePosteo', kwargs={'pk': postID})
+
 class ComentarioDelete(LoginRequiredMixin, DeleteView):
     model = Comentario
-    success_url = reverse_lazy('blog:ListaPosteos')
+    
     def get_template_names(self):         
-        return 'blog/comentario_confirm_delete.html'
+        return 'blog/comentario_confirm_delete.html'    
+
+    def get_success_url(self):        
+        posteo = Comentario.objects.all()[0]
+        posteoID = posteo.post_id
+        return reverse_lazy('blog:DetallePosteo', kwargs={'pk': posteoID})
