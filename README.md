@@ -4,7 +4,7 @@
 ```bash
 git clone https://github.com/NicoAgusAlma/BlogPlantas
 
-cd BlogPlantas
+cd BlogFinal
 ```
 - Verificar cual es la ultima version y cambiar a esa rama
 ```bash

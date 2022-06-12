@@ -2,7 +2,6 @@ from re import A
 from django.urls import reverse_lazy
 from django.shortcuts import redirect, render
 from django.forms.models import model_to_dict
-from requests import request
 from sesion.forms import AvatarUser, UserRegisterForm
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from sesion.forms import UserEditForm
