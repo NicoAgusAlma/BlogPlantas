@@ -29,6 +29,9 @@ DEBUG = env.bool('DEBUG')
 ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
 
 
+WSGI_APPLICATION = 'BlogFinal.wsgi.application'
+
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -79,8 +82,6 @@ TEMPLATES = [
         },
     },
 ]
-
-WSGI_APPLICATION = 'BlogFinal.wsgi.application'
 
 
 # Database

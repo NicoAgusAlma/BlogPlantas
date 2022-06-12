@@ -1,1 +1,1 @@
-web: gunicorn coderhouse_project.wsgi
+web: gunicorn BlogPlantas_project.wsgi
