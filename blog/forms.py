@@ -21,7 +21,7 @@ class BlogPost(forms.ModelForm):
 class Comentar(forms.ModelForm):
     class Meta:
         model=Comentario
-        fields = ('post','nombre','texto')
+        fields = ('nombre','texto')
         widgets = {
             'nombre': forms.TextInput(attrs={'palceholder':'user name', 'id':'comentar', 'type':'hidden'}),
             

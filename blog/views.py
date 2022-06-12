@@ -80,6 +80,11 @@ class ComentarioCreate(LoginRequiredMixin, CreateView):
     model = Comentario
     success_url = reverse_lazy('blog:ListaPosteos')
     form_class = Comentar
+
+    def form_valid(self, form):
+        form.instance.post_id = self.kwargs['pk']
+        return super().form_valid(form)
+
     def get_template_names(self):         
         return 'blog/comentario_form.html'
 
