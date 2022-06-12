@@ -26,6 +26,13 @@ python3 -m venv venv
 source venv/bin/activate
 ```
 
+- Crear el archivo BlogFinal/.env con el siguiente contenido exacto:
+```bash
+SECRET_KEY=django-insecure-)rkd(&-)y5v^pw4#_sa33gh%v*(-dr!y7l#mb0s-f)4(6$cee9
+DEBUG=True
+ALLOWED_HOSTS=*,
+```
+
 - Instalar las dependencias del proyecto
 ```bash
 
