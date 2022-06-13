@@ -19,20 +19,20 @@ class ViveroDetail(DetailView):
 
 class ViveroCreate(LoginRequiredMixin, CreateView):
     model = Vivero
-    success_url = reverse_lazy('home:ListaViveros')
+    success_url = reverse_lazy('viveros:ListaViveros')
     fields = ['nombre','provincia','localidad','calle','altura','telefono', 'imagen']
     def get_template_names(self):         
         return 'viveros/vivero_form.html'
 
 class ViveroUpdate(LoginRequiredMixin, UpdateView):
     model = Vivero
-    success_url = reverse_lazy('home:ListaViveros')
+    success_url = reverse_lazy('viveros:ListaViveros')
     fields = ['nombre','provincia','localidad','calle','altura','telefono', 'imagen']
     def get_template_names(self):         
         return 'viveros/vivero_form.html'
 
 class ViveroDelete(LoginRequiredMixin, DeleteView):
     model = Vivero
-    success_url = reverse_lazy('home:ListaViveros')
+    success_url = reverse_lazy('viveros:ListaViveros')
     def get_template_names(self):         
         return 'viveros/vivero_confirm_delete.html'
