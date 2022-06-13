@@ -3,7 +3,7 @@ from django.views.generic import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from blog.forms import BlogPost, Comentar
-from blog.models import Categoria, Posteo, Comentario
+from blog.models import Posteo, Comentario, Categoria
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 from plantas.models import Planta
@@ -17,7 +17,7 @@ class PosteoList(ListView):
     plant_list = Planta.objects.all()
     usuarios = User.objects.all()
     categorias = Categoria.objects.all()
-    extra_context= {'plant_list':plant_list, 'usuarios':usuarios, 'categorias':categorias}
+    extra_context= {'plant_list':plant_list, 'usuarios':usuarios, 'categorias':categorias } 
 
 
 class PosteoDetail(DetailView):
@@ -48,7 +48,7 @@ def CategoriaList(request, cate):
     posteos_filtrados = Posteo.objects.filter(categoria=cate)
     categorias = Categoria.objects.all()
     posteos = Posteo.objects.all()
-    return render (request , 'blog/posteos_filtrados.html', {'posteos_filtrados': posteos_filtrados, 'cate':cate, 'categorias':categorias, 'posteos':posteos})
+    return render (request , 'blog/posteos_filtrados.html', {'posteos_filtrados': posteos_filtrados, 'cate':cate, 'posteos':posteos}) # 'categorias':categorias,
 
 class CategoriasList(LoginRequiredMixin, ListView):
     model = Categoria
@@ -76,7 +76,7 @@ class CategoriaDelete(LoginRequiredMixin, DeleteView):
 
 class ComentarioCreate(LoginRequiredMixin, CreateView):
     model = Comentario
-    # success_url = reverse_lazy('blog:ListaPosteos')
+    success_url = reverse_lazy('blog:ListaPosteos')
     form_class = Comentar
 
     def form_valid(self, form):

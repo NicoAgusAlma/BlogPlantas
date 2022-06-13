@@ -1,8 +1,8 @@
-from email.mime import image
+
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm, UserChangeForm
-from blog.models import Posteo, Categoria, Comentario
+from blog.models import Posteo, Comentario, Categoria
 
 cat = Categoria.objects.all().values_list('nombre', 'nombre')
 choice_list = []
