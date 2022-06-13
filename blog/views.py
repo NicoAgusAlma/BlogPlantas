@@ -19,6 +19,7 @@ class PosteoList(ListView):
     categorias = Categoria.objects.all()
     extra_context= {'plant_list':plant_list, 'usuarios':usuarios, 'categorias':categorias}
 
+
 class PosteoDetail(DetailView):
     model = Posteo
     template_name = 'blog/posteo_detalle.html'
