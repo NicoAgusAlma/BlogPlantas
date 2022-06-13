@@ -48,7 +48,7 @@ def CategoriaList(request, cate):
     posteos_filtrados = Posteo.objects.filter(categoria=cate)
     categorias = Categoria.objects.all()
     posteos = Posteo.objects.all()
-    return render (request , 'blog/posteos_filtrados.html', {'posteos_filtrados': posteos_filtrados, 'cate':cate, 'posteos':posteos}) # 'categorias':categorias,
+    return render (request , 'blog/posteos_filtrados.html', {'posteos_filtrados': posteos_filtrados, 'cate':cate, 'posteos':posteos, 'categorias':categorias})
 
 class CategoriasList(LoginRequiredMixin, ListView):
     model = Categoria

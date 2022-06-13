@@ -22,15 +22,17 @@
                                     <i style="color: rgb(0, 0, 0);">{{producto.nombre}}</i>
                                 </a>
                                 {% if user.is_authenticated %}
+                                {% if user.is_superuser %}
                                 (
-                                <a href="{% url 'productos:UpdateProducto' producto.id %}">
-                                    <i class="fa fa-pencil" style="color: rgb(0, 0, 0);"> </i>
+                                <a class="site-title" href="{% url 'productos:UpdateProducto' producto.id %}">Editar
+                                    
                                 </a>
                                 |
-                                <a href="{% url 'productos:BorrarProducto' producto.id %}">
-                                    <i class="fa fa-trash" style="color: rgb(0, 0, 0);"> </i>
+                                <a class="site-title" href="{% url 'productos:BorrarProducto' producto.id %}">Eliminar
+                                    
                                 </a>
                                 )
+                                {% endif %}
                                 {% endif %}
                             </li><br>
                         {% endfor %}

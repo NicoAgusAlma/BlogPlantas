@@ -22,15 +22,13 @@
                                     <i style="color: rgb(0, 0, 0);">{{problema.nombreProblema}}</i>
                                 </a>
                                 {% if user.is_authenticated %}
+                                {% if user.is_superuser %}
                                 (
-                                <a href="{% url 'problemas:UpdateProblema' problema.id %}">
-                                    <i class="fa fa-pencil" style="color: rgb(0, 0, 0);"> </i>
-                                </a>
+                                <a class="site-title" href="{% url 'problemas:UpdateProblema' problema.id %}">Editar</a>
                                 |
-                                <a href="{% url 'problemas:BorrarProblema' problema.id %}">
-                                    <i class="fa fa-trash" style="color: rgb(0, 0, 0);"> </i>
-                                </a>
+                                <a class="site-title" href="{% url 'problemas:BorrarProblema' problema.id %}">Eliminar </a>
                                 )
+                                {% endif %}
                                 {% endif %}
                             </li><br>
                         {% endfor %}

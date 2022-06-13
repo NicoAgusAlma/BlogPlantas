@@ -22,15 +22,13 @@
                                     <i style="color: rgb(0, 0, 0);">{{planta.nombreComun}}</i>
                                 </a>
                                 {% if user.is_authenticated %}
+                                {% if user.is_superuser %}
                                 (
-                                <a href="{% url 'plantas:UpdatePlanta' planta.id %}">
-                                    <i class="fa fa-pencil" style="color: rgb(0, 0, 0);"> </i>
-                                </a>
+                                <a class="site-title" href="{% url 'plantas:UpdatePlanta' planta.id %}">Editar</a>
                                 |
-                                <a href="{% url 'plantas:BorrarPlanta' planta.id %}">
-                                    <i class="fa fa-trash" style="color: rgb(0, 0, 0);"> </i>
-                                </a>
+                                <a class="site-title" ref="{% url 'plantas:BorrarPlanta' planta.id %}">Eliminar</a>
                                 )
+                                {% endif %}
                                 {% endif %}
                             </li><br>
                         {% endfor %}
