@@ -21,15 +21,13 @@
                                     <i style="color: rgb(0, 0, 0);">{{vivero.nombre}} en {{vivero.localidad}}</i>
                                 </a>
                                 {% if user.is_authenticated %}
+                                {% if user.is_superuser %}
                                 (
-                                <a href="{% url 'viveros:UpdateVivero' vivero.id %}">
-                                    <i class="fa fa-pencil" style="color: rgb(0, 0, 0);"> </i>
-                                </a>
+                                <a class="site-title" href="{% url 'viveros:UpdateVivero' vivero.id %}">Editar</a>
                                 |
-                                <a href="{% url 'viveros:BorrarVivero' vivero.id %}">
-                                    <i class="fa fa-trash" style="color: rgb(0, 0, 0);"> </i>
-                                </a>
+                                <a class="site-title" href="{% url 'viveros:BorrarVivero' vivero.id %}">Eliminar</a>
                                 )
+                                {% endif %}
                                 {% endif %}
                             </li><br>
                         {% endfor %}
