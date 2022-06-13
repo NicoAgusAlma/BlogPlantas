@@ -14,10 +14,10 @@ urlpatterns = [
     path('categoria/<str:cate>', views.CategoriaList, name='ListaCategoria'),
 
     # LISTADO DE CATEGORIAS
-    path('categorias/', views.CategoriasList.as_view(), name='ListaCategorias'),
-    path('categoria/add/', views.CategoriaCreate.as_view(), name='AgregarCategoria'),
-    path('categoria/<int:pk>/update/', views.CategoriaUpdate.as_view(), name='UpdateCategoria'),
-    path('categoria/<int:pk>/delete/', views.CategoriaDelete.as_view(), name='BorrarCategoria'),
+    # path('categorias/', views.CategoriasList.as_view(), name='ListaCategorias'),
+    # path('categoria/add/', views.CategoriaCreate.as_view(), name='AgregarCategoria'),
+    # path('categoria/<int:pk>/update/', views.CategoriaUpdate.as_view(), name='UpdateCategoria'),
+    # path('categoria/<int:pk>/delete/', views.CategoriaDelete.as_view(), name='BorrarCategoria'),
 
     # COMENTARIOS
     path('<int:pk>/detail/comentar/', views.ComentarioCreate.as_view(), name='AgregarComentario'),

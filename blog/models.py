@@ -17,8 +17,8 @@ class Posteo(models.Model):
     def __str__(self):
         return f'{self.titulo} / {self.fecha} / {self.autor}'
 
-class Categoria(models.Model):
-    nombre=models.CharField(max_length=100)
+# class Categoria(models.Model):
+#     nombre=models.CharField(max_length=100)
 
     def __str__(self):
         return f'{self.nombre}'

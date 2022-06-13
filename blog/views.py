@@ -3,7 +3,7 @@ from django.views.generic import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from blog.forms import BlogPost, Comentar
-from blog.models import Categoria, Posteo, Comentario
+from blog.models import Posteo, Comentario #, Categoria
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 from plantas.models import Planta
@@ -16,8 +16,8 @@ class PosteoList(ListView):
     ordering = ['-fecha']
     plant_list = Planta.objects.all()
     usuarios = User.objects.all()
-    categorias = Categoria.objects.all()
-    extra_context= {'plant_list':plant_list, 'usuarios':usuarios, 'categorias':categorias}
+    # categorias = Categoria.objects.all()
+    extra_context= {'plant_list':plant_list, 'usuarios':usuarios } #'categorias':categorias
 
 
 class PosteoDetail(DetailView):
@@ -46,33 +46,33 @@ class PosteoDelete(LoginRequiredMixin, DeleteView):
 
 def CategoriaList(request, cate):
     posteos_filtrados = Posteo.objects.filter(categoria=cate)
-    categorias = Categoria.objects.all()
+    # categorias = Categoria.objects.all()
     posteos = Posteo.objects.all()
-    return render (request , 'blog/posteos_filtrados.html', {'posteos_filtrados': posteos_filtrados, 'cate':cate, 'categorias':categorias, 'posteos':posteos})
+    return render (request , 'blog/posteos_filtrados.html', {'posteos_filtrados': posteos_filtrados, 'cate':cate, 'posteos':posteos}) # 'categorias':categorias,
 
-class CategoriasList(LoginRequiredMixin, ListView):
-    model = Categoria
-    template_name = 'blog/categorias_list.html'
+# class CategoriasList(LoginRequiredMixin, ListView):
+#     model = Categoria
+#     template_name = 'blog/categorias_list.html'
 
-class CategoriaCreate(LoginRequiredMixin, CreateView):
-    model = Categoria
-    success_url = reverse_lazy('blog:ListaCategorias')
-    fields = ['nombre']
-    def get_template_names(self):         
-        return 'blog/categorias_form.html'
+# class CategoriaCreate(LoginRequiredMixin, CreateView):
+#     model = Categoria
+#     success_url = reverse_lazy('blog:ListaCategorias')
+#     fields = ['nombre']
+#     def get_template_names(self):         
+#         return 'blog/categorias_form.html'
 
-class CategoriaUpdate(LoginRequiredMixin, UpdateView):
-    model = Categoria
-    success_url = reverse_lazy('blog:ListaCategorias')
-    fields = ['nombre']
-    def get_template_names(self):         
-        return 'blog/categorias_form.html'
+# class CategoriaUpdate(LoginRequiredMixin, UpdateView):
+#     model = Categoria
+#     success_url = reverse_lazy('blog:ListaCategorias')
+#     fields = ['nombre']
+#     def get_template_names(self):         
+#         return 'blog/categorias_form.html'
 
-class CategoriaDelete(LoginRequiredMixin, DeleteView):
-    model = Categoria
-    success_url = reverse_lazy('blog:ListaCategorias')
-    def get_template_names(self):         
-        return 'blog/categorias_confirm_delete.html'
+# class CategoriaDelete(LoginRequiredMixin, DeleteView):
+#     model = Categoria
+#     success_url = reverse_lazy('blog:ListaCategorias')
+#     def get_template_names(self):         
+#         return 'blog/categorias_confirm_delete.html'
 
 class ComentarioCreate(LoginRequiredMixin, CreateView):
     model = Comentario
