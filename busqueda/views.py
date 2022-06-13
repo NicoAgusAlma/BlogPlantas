@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.db.models import Q
 from blog.models import Posteo
-from plantas.models import Planta
+# from plantas.models import Planta
 from viveros.models import Vivero
 from productos.models import Producto
 from problemas.models import Problema
@@ -49,7 +49,7 @@ def buscar(request):
         posteos = Posteo.objects.filter(query)
         context_dict = {
             'search_param':search_param,
-            'plantas': plantas,
+            #'plantas': plantas,
             'problemas': problemas,
             'viveros':viveros,
             'productos':productos,
