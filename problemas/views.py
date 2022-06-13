@@ -29,7 +29,8 @@ class ProblemaCreate(LoginRequiredMixin, CreateView):
 class ProblemaUpdate(LoginRequiredMixin, UpdateView):
     model = Problema
     success_url = reverse_lazy('problemas:ListaProblemas')
-    fields = ['nombreProblema','nombreCientifico','peligro','productos','solucion', 'imagen']
+    form_class = ProblemaCustom
+    # fields = ['nombreProblema','nombreCientifico','peligro','productos','solucion', 'imagen']
     def get_template_names(self):         
         return 'problemas/problema_form.html'
 
