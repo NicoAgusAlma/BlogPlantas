@@ -13,7 +13,7 @@ class Planta(models.Model):
     imagen=models.ImageField(upload_to='imagenesPlantas', null=True, blank=True)
     familia=models.CharField(help_text='<br> Arbol, planta, flor, cactacea, etc.', max_length=50)
     sustrato=models.CharField(help_text='<br> Algun tipo de tierra especial?', max_length=50)
-    precio=models.IntegerField(help_text='<br> Precio en U$s blue.')
+    precio=models.IntegerField(help_text='<br> Precio en U$s blue.', max_length=5)
     viveros=models.ManyToManyField(Vivero, blank=True, help_text='<br> Mantenga CTRL para seleccionar varios')
     peligrosComunes=models.ManyToManyField(Problema, blank=True, help_text='<br> Mantenga CTRL para seleccionar varios')
     interior=models.BooleanField(default=True, verbose_name='Es planta de interior?')

@@ -6,6 +6,8 @@ from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
+import random
+import string
 
 from problemas.models import Problema
 
@@ -29,15 +31,37 @@ class PlantaCreate(LoginRequiredMixin, CreateView):
     model = Planta
     success_url = reverse_lazy('plantas:ListaPlantas')  
     form_class=PlantaCustom  
-    # fields = ['nombreComun','nombreCientifico','familia','sustrato','precio','viveros','peligrosComunes','interior','luzDirecta','frecuenciaRiego','descripcion', 'imagen']
     def get_template_names(self):         
         return 'plantas/planta_form.html'
+
+    # aqui la parte de testing sobre distintos campos:   
+    # estos campos deben ser deshabilitados en forms.py para ser testeados.
+    # una vez hecho el testeo, volver a habilitarlos 
+    
+    # def form_valid(self, form):
+    #     str_len=20
+    #     num_len=5
+    #     nombrerandom =''.join(random.choice(string.ascii_lowercase + string.ascii_uppercase + string.digits) for _ in range(str_len))
+    #     nombreCrandom =''.join(random.choice(string.ascii_lowercase + string.ascii_uppercase + string.digits) for _ in range(str_len))
+    #     familiarandom =''.join(random.choice(string.ascii_lowercase + string.ascii_uppercase + string.digits) for _ in range(str_len))
+    #     sustratorandom =''.join(random.choice(string.ascii_lowercase + string.ascii_uppercase + string.digits) for _ in range(str_len))
+    #     preciorandom =''.join(random.choice(string.digits) for _ in range(num_len))
+    #     frecuenciarandom =''.join(random.choice(string.digits) for _ in range(num_len))
+
+    #     form.instance.nombreComun = nombrerandom 
+    #     form.instance.nombreCientifico = nombreCrandom 
+    #     form.instance.familia = familiarandom 
+    #     form.instance.sustrato = sustratorandom 
+    #     form.instance.precio = preciorandom 
+    #     form.instance.frecuenciaRiego = frecuenciarandom 
+
+    #     return super(PlantaCreate, self).form_valid(form)
+    
 
 class PlantaUpdate(LoginRequiredMixin, UpdateView):
     model = Planta
     success_url = reverse_lazy('plantas:ListaPlantas')
     form_class=PlantaCustom  
-    # fields = ['nombreComun','nombreCientifico','familia','sustrato','precio','viveros','peligrosComunes','interior','luzDirecta','frecuenciaRiego','descripcion']
     def get_template_names(self):         
         return 'plantas/planta_form.html'
 
