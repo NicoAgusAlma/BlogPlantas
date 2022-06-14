@@ -37,10 +37,12 @@
                             </li><br>
                         {% endfor %}
                         {% if user.is_authenticated %}
+                        {% if user.is_superuser %}
                         </h3></ul>
                         <div style="text-decoration-line: underline;">
                             <h3><a class="btn btn-border" href="{% url 'productos:AgregarProducto' %}" >Nuevo producto</a></h3>                         
                             </div>
+                            {% endif %}
                             {% endif %}
                     
                     

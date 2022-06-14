@@ -35,9 +35,11 @@
                         
                         </h3></ul>
                         {% if user.is_authenticated %}
+                        {% if user.is_superuser %}
                         <div style="text-decoration-line: underline;">
                             <h3><a class="btn btn-border" href="{% url 'problemas:AgregarProblema' %}" >Cargar problema</a></h3>                         
                             </div>
+                            {% endif %}
                             {% endif %}
                     
                     

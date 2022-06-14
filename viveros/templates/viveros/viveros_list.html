@@ -34,9 +34,11 @@
                         
                         </h3></ul>
                         {% if user.is_authenticated %}
+                        {% if user.is_superuser %}
                         <div >
                         <h3><a class="btn btn-border" href="{% url 'viveros:AgregarVivero' %}" >Nuevo vivero</a></h3>                         
                         </div>
+                        {% endif %}
                         {% endif %}
                                   
                     

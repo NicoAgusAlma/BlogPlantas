@@ -8,7 +8,7 @@ class UserRegisterForm(UserCreationForm):
     username = forms.CharField(label='Nombre de Usuario', min_length=3)
     last_name = forms.CharField(label='Apellido', min_length=3)
     email = forms.EmailField(label='Correo electrónico')
-    password1= forms.CharField(label='Contraseña', widget=forms.PasswordInput, help_text='<br>La contraseña debe tener minimo 8 caracteres, 1 minuscula y 1 mayuscula')
+    password1= forms.CharField(label='Contraseña', widget=forms.PasswordInput, help_text='<br>La contraseña debe tener minimo 8 caracteres, 1 minuscula y 1 mayuscula y diferente a los campos anteriores')
     password2= forms.CharField(label='Repita la contraseña', widget=forms.PasswordInput)
    # asdfa4t24awg4 KHG729sdiusd
     class Meta(UserCreationForm.Meta):
