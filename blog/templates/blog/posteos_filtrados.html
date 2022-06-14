@@ -84,9 +84,9 @@
                                 <h4 class="widget-title">Categories</h4>
                                 <ul class="list-unstyled">
                                     {% for categoria in categorias %}
-                                    {% if forloop.revcounter <= 5 %}
+                                   
                                     <li><a href="/blog/categoria/{{categoria.nombre}}">{{categoria.nombre}}</a></li>
-                                    {% endif %}
+                                   
                                     {% endfor %}
                                 </ul>
                             </div><!-- /.widget-categories -->                            
