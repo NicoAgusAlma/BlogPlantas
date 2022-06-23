@@ -10,11 +10,11 @@ from problemas.models import Problema
 # Create your views here.
 
 
-def buscador(request):
+def explorer(request):
     return render(request, 'busqueda/resultado_busqueda.html',{'search_param':''})
 
 
-def buscar(request):
+def search(request):
     if request.GET['busqueda']:
         search_param = request.GET['busqueda']
         print(search_param)

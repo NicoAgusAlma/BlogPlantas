@@ -6,22 +6,22 @@ from blog import views
 app_name='blog'
 urlpatterns = [
     # BLOG
-    path('list/', views.PosteoList.as_view(), name='ListaPosteos'),
-    path('add/', views.PosteoCreate.as_view(), name='AgregarPosteo'),
-    path('<int:pk>/detail/', views.PosteoDetail.as_view(), name='DetallePosteo'),
-    path('<int:pk>/update/', views.PosteoUpdate.as_view(), name='UpdatePosteo'),
-    path('<int:pk>/delete/', views.PosteoDelete.as_view(), name='BorrarPosteo'),
-    path('categoria/<str:cate>', views.CategoriaList, name='ListaCategoria'),
+    path('list/', views.PostListView.as_view(), name='ListaPosteos'),
+    path('add/', views.PostCreateView.as_view(), name='AgregarPosteo'),
+    path('<int:pk>/detail/', views.PostDetailView.as_view(), name='DetallePosteo'),
+    path('<int:pk>/update/', views.PostUpdateView.as_view(), name='UpdatePosteo'),
+    path('<int:pk>/delete/', views.PostDeleteView.as_view(), name='BorrarPosteo'),
+    path('categoria/<str:cate>', views.CategoryCustomList, name='ListaCategoria'),
 
     # LISTADO DE CATEGORIAS
-    path('categorias/', views.CategoriasList.as_view(), name='ListaCategorias'),
-    path('categoria/add/', views.CategoriaCreate.as_view(), name='AgregarCategoria'),
-    path('categoria/<int:pk>/update/', views.CategoriaUpdate.as_view(), name='UpdateCategoria'),
-    path('categoria/<int:pk>/delete/', views.CategoriaDelete.as_view(), name='BorrarCategoria'),
+    path('categorias/', views.CategoriesListView.as_view(), name='ListaCategorias'),
+    path('categoria/add/', views.CategoryCreateView.as_view(), name='AgregarCategoria'),
+    path('categoria/<int:pk>/update/', views.CategoryUpdateView.as_view(), name='UpdateCategoria'),
+    path('categoria/<int:pk>/delete/', views.CategoryDeleteView.as_view(), name='BorrarCategoria'),
 
     # COMENTARIOS
-    path('<int:pk>/detail/comentar/', views.ComentarioCreate.as_view(), name='AgregarComentario'),
-    path('<int:pk>/comentario/eliminar/', views.ComentarioDelete.as_view(), name='EliminarComentario'),
+    path('<int:pk>/detail/comentar/', views.ComentCreateView.as_view(), name='AgregarComentario'),
+    path('<int:pk>/comentario/eliminar/', views.ComentDeleteView.as_view(), name='EliminarComentario'),
 
    ]
   

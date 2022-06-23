@@ -10,7 +10,7 @@ from plantas.models import Planta
 from django.contrib.auth.models import User
 
 
-class PosteoList(ListView):
+class PostListView(ListView):
     model = Posteo
     template_name = 'blog/posteos_list.html'
     ordering = ['-fecha']
@@ -20,61 +20,61 @@ class PosteoList(ListView):
     extra_context= {'plant_list':plant_list, 'usuarios':usuarios, 'categorias':categorias } 
 
 
-class PosteoDetail(DetailView):
+class PostDetailView(DetailView):
     model = Posteo
     template_name = 'blog/posteo_detalle.html'
 
-class PosteoCreate(LoginRequiredMixin, CreateView):
+class PostCreateView(LoginRequiredMixin, CreateView):
     model = Posteo
     success_url = reverse_lazy('blog:ListaPosteos')
     form_class = BlogPost
     def get_template_names(self):         
         return 'blog/posteo_form.html'
     
-class PosteoUpdate(LoginRequiredMixin, UpdateView):
+class PostUpdateView(LoginRequiredMixin, UpdateView):
     model = Posteo
     form_class = BlogPost
     success_url = reverse_lazy('blog:ListaPosteos')
     def get_template_names(self):         
         return 'blog/posteo_form.html'
 
-class PosteoDelete(LoginRequiredMixin, DeleteView):
+class PostDeleteView(LoginRequiredMixin, DeleteView):
     model = Posteo
     success_url = reverse_lazy('blog:ListaPosteos')
     def get_template_names(self):         
         return 'blog/posteo_confirm_delete.html'
 
-def CategoriaList(request, cate):
+def CategoryCustomList(request, cate):
     posteos_filtrados = Posteo.objects.filter(categoria=cate)
     categorias = Categoria.objects.all()
     posteos = Posteo.objects.all()
     return render (request , 'blog/posteos_filtrados.html', {'posteos_filtrados': posteos_filtrados, 'cate':cate, 'posteos':posteos, 'categorias':categorias})
 
-class CategoriasList(LoginRequiredMixin, ListView):
+class CategoriesListView(LoginRequiredMixin, ListView):
     model = Categoria
     template_name = 'blog/categorias_list.html'
 
-class CategoriaCreate(LoginRequiredMixin, CreateView):
+class CategoryCreateView(LoginRequiredMixin, CreateView):
     model = Categoria
     success_url = reverse_lazy('blog:ListaCategorias')
     fields = ['nombre']
     def get_template_names(self):         
         return 'blog/categorias_form.html'
 
-class CategoriaUpdate(LoginRequiredMixin, UpdateView):
+class CategoryUpdateView(LoginRequiredMixin, UpdateView):
     model = Categoria
     success_url = reverse_lazy('blog:ListaCategorias')
     fields = ['nombre']
     def get_template_names(self):         
         return 'blog/categorias_form.html'
 
-class CategoriaDelete(LoginRequiredMixin, DeleteView):
+class CategoryDeleteView(LoginRequiredMixin, DeleteView):
     model = Categoria
     success_url = reverse_lazy('blog:ListaCategorias')
     def get_template_names(self):         
         return 'blog/categorias_confirm_delete.html'
 
-class ComentarioCreate(LoginRequiredMixin, CreateView):
+class ComentCreateView(LoginRequiredMixin, CreateView):
     model = Comentario
     success_url = reverse_lazy('blog:ListaPosteos')
     form_class = Comentar
@@ -90,7 +90,7 @@ class ComentarioCreate(LoginRequiredMixin, CreateView):
           postID=self.kwargs['pk']
           return reverse_lazy('blog:DetallePosteo', kwargs={'pk': postID})
 
-class ComentarioDelete(LoginRequiredMixin, DeleteView):
+class ComentDeleteView(LoginRequiredMixin, DeleteView):
     model = Comentario
     
     def get_template_names(self):         
