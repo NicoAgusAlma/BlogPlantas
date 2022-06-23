@@ -9,6 +9,42 @@
 ## 📺 Video!
 Aqui el [link](https://www.youtube.com/watch?v=02GNPHcmvF0) del video con la explicacion (resumida) de la pagina.
 
+## 👥 Participantes en el proyecto:
+El proyecto se llevo a cabo de la mano de 2 participantes: Nicolas Almazan y Neyen Luna
+Las tareas se distribuyeron y ejecutaron de la siguiente manera:
+
+Nicolas Almazan:
+
+- Planeamiento general de la web
+- Pagina "about me"
+- Creacion de modelos segun requerimientos
+- Implementacion de template
+- Creacion de seccion blog
+- Creacion de buscador integrado en toda la web
+- Creacion de modelos y formularios de usuarios: login / register
+- Creacion de modelo categorias y columna de filtro en blog
+- Integracion de texto enriquecido para posteos en blog
+- Creacion de relaciones entre modelos (ManyToMany / ForeignKey)
+- Alta en GitHub
+- Creacion de Video para YouTube
+
+
+Neyen Luna:
+
+- Planeamiento general de la web
+- Unit Test
+- Creacion de formularios e integracion en html
+- Integracion de template con formularios y modelos propios+
+- Integracion de comentarios en blog
+- Creacion de galeria
+- Integracion de usuarios y permisos en la web.
+- Creacion de columna con posteos recientes en blog
+- Mejoras en CSS
+- Primera subida de datos a la base
+- Creacion de modelo y formulario para imagenes de perfil
+- Creacion / modificacion Readme
+
+
 # Instrucciones para ejecutar este proyecto
 
 - Clonar el proyecto y cambiar de rama
