@@ -6,6 +6,6 @@ from contacto import views
 app_name='contacto'
 urlpatterns = [
     #CONTACTO
-    path('contacto', views.contacto, name='Contacto'),
+    path('contacto', views.contact, name='Contacto'),
 
     ]

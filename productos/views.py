@@ -8,29 +8,29 @@ from django.urls import reverse_lazy
 # Create your views here.
 # PRODUCTOS
 
-class ProductoList(ListView):
+class ProductListView(ListView):
     model = Producto
     template_name = 'productos/productos_list.html'
 
-class ProductoDetail(DetailView):
+class ProductDetailView(DetailView):
     model = Producto
     template_name = 'productos/producto_detalle.html'
 
-class ProductoCreate(LoginRequiredMixin, CreateView):
+class ProductCreateView(LoginRequiredMixin, CreateView):
     model = Producto
     success_url = reverse_lazy('productos:ListaProductos')
     fields = ['nombre','precio','puntoDeVenta', 'imagen']
     def get_template_names(self):         
         return 'productos/producto_form.html'
 
-class ProductoUpdate(LoginRequiredMixin, UpdateView):
+class ProductUpdateView(LoginRequiredMixin, UpdateView):
     model = Producto
     success_url = reverse_lazy('productos:ListaProductos')
     fields = ['nombre','precio','puntoDeVenta', 'imagen']
     def get_template_names(self):         
         return 'productos/producto_form.html'
 
-class ProductoDelete(LoginRequiredMixin, DeleteView):
+class ProductDeleteView(LoginRequiredMixin, DeleteView):
     model = Producto
     success_url = reverse_lazy('productos:ListaProductos')
     def get_template_names(self):         

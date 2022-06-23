@@ -4,7 +4,7 @@ from plantas.models import Planta
 from blog.models import Posteo
 
 # Create your views here.
-class Galeria(ListView):
+class GaleriyListView(ListView):
     model = Planta
     posteos = Posteo.objects.all()
     extra_context = {'posteos':posteos}

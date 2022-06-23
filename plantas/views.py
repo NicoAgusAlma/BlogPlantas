@@ -17,17 +17,17 @@ from problemas.models import Problema
 def ui(request):
     return render (request, 'plantas/ui.html')
 
-class PlantaList(ListView):
+class PlantListView(ListView):
     model = Planta
     template_name = 'plantas/plantas_list.html'
     
 
-class PlantaDetail(DetailView):
+class PlantDetailView(DetailView):
     model = Planta
     template_name = 'plantas/planta_detalle.html' 
    
 
-class PlantaCreate(LoginRequiredMixin, CreateView):
+class PlantCreateView(LoginRequiredMixin, CreateView):
     model = Planta
     success_url = reverse_lazy('plantas:ListaPlantas')  
     form_class=PlantaCustom  
@@ -55,17 +55,17 @@ class PlantaCreate(LoginRequiredMixin, CreateView):
     #     form.instance.precio = preciorandom 
     #     form.instance.frecuenciaRiego = frecuenciarandom 
 
-    #     return super(PlantaCreate, self).form_valid(form)
+    #     return super(PlantCreateView, self).form_valid(form)
     
 
-class PlantaUpdate(LoginRequiredMixin, UpdateView):
+class PlantUpdateView(LoginRequiredMixin, UpdateView):
     model = Planta
     success_url = reverse_lazy('plantas:ListaPlantas')
     form_class=PlantaCustom  
     def get_template_names(self):         
         return 'plantas/planta_form.html'
 
-class PlantaDelete(LoginRequiredMixin, DeleteView):
+class PlantDeleteView(LoginRequiredMixin, DeleteView):
     model = Planta
     success_url = reverse_lazy('plantas:ListaPlantas')
     def get_template_names(self):         

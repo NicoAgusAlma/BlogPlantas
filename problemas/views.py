@@ -10,15 +10,15 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 # Create your views here.
 # PROBLEMAS
 
-class ProblemaList(ListView):
+class ProblemListView(ListView):
     model = Problema
     template_name = 'problemas/problemas_list.html'
 
-class ProblemaDetail(DetailView):
+class ProblemDetailView(DetailView):
     model = Problema
     template_name = 'problemas/problema_detalle.html'
 
-class ProblemaCreate(LoginRequiredMixin, CreateView):
+class ProblemCreateView(LoginRequiredMixin, CreateView):
     model = Problema
     success_url = reverse_lazy('problemas:ListaProblemas')
     form_class = ProblemaCustom
@@ -26,7 +26,7 @@ class ProblemaCreate(LoginRequiredMixin, CreateView):
     def get_template_names(self):         
         return 'problemas/problema_form.html'
 
-class ProblemaUpdate(LoginRequiredMixin, UpdateView):
+class ProblemUpdateView(LoginRequiredMixin, UpdateView):
     model = Problema
     success_url = reverse_lazy('problemas:ListaProblemas')
     form_class = ProblemaCustom
@@ -34,7 +34,7 @@ class ProblemaUpdate(LoginRequiredMixin, UpdateView):
     def get_template_names(self):         
         return 'problemas/problema_form.html'
 
-class ProblemaDelete(LoginRequiredMixin, DeleteView):
+class ProblemDeleteView(LoginRequiredMixin, DeleteView):
     model = Problema
     success_url = reverse_lazy('problemas:ListaProblemas')
     def get_template_names(self):         
