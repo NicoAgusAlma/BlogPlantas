@@ -9,29 +9,29 @@ from django.urls import reverse_lazy
 # Create your views here.
 # VIVEROS
 
-class ViveroList(ListView):
+class GreenHouseListView(ListView):
     model = Vivero
     template_name = 'viveros/viveros_list.html'
 
-class ViveroDetail(DetailView):
+class GreenHouseDetailView(DetailView):
     model = Vivero
     template_name = 'viveros/vivero_detalle.html'
 
-class ViveroCreate(LoginRequiredMixin, CreateView):
+class GreenHouseCreateView(LoginRequiredMixin, CreateView):
     model = Vivero
     success_url = reverse_lazy('viveros:ListaViveros')
     fields = ['nombre','provincia','localidad','calle','altura','telefono', 'imagen']
     def get_template_names(self):         
         return 'viveros/vivero_form.html'
 
-class ViveroUpdate(LoginRequiredMixin, UpdateView):
+class GreenHouseUpdateView(LoginRequiredMixin, UpdateView):
     model = Vivero
     success_url = reverse_lazy('viveros:ListaViveros')
     fields = ['nombre','provincia','localidad','calle','altura','telefono', 'imagen']
     def get_template_names(self):         
         return 'viveros/vivero_form.html'
 
-class ViveroDelete(LoginRequiredMixin, DeleteView):
+class GreenHouseDeleteView(LoginRequiredMixin, DeleteView):
     model = Vivero
     success_url = reverse_lazy('viveros:ListaViveros')
     def get_template_names(self):         
